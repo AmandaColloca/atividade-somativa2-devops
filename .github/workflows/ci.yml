@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: CI
 
 on:
   push:
@@ -23,11 +23,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "testing"
+      - run: docker run -rm -p 8080:8080 -d my-image-name:$(date +%s)
       - uses: AppThreat/sast-scan-action@master
-        with:
-          type: "html"
 
-  deploy-job:
+
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
