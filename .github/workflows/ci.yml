@@ -18,10 +18,13 @@ jobs:
 
 
 
+
+  
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
       - run: echo "testing"
       - run: docker run -p 8080:8080 -d my-image-name:$(date +%s)
       - uses: AppThreat/sast-scan-action@master
