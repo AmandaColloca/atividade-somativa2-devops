@@ -12,4 +12,4 @@ function sendMessage(message) {
 }
 
 
-sendMessage('Teste: Aviso de uma nova PR aberta no seu repositório GitHub');
+sendMessage('Teste2: Aviso de uma nova PR aberta no seu repositório GitHub');
